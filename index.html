@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Image</title>
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload the Google Font - Gluten -->
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/gluten/v16/HhyIU5gk9fW7OUdVIPh2zD_RSqQJ__A1zDshQ5cd.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://fonts.gstatic.com/s/gluten/v16/HhyIU5gk9fW7OUdVIPh2zD_RSqQJ__A1zDQhQw.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"" rel="stylesheet" />
+    <!-- Include FontFaceObserver from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.1.0/fontfaceobserver.standalone.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="800"
+      height="1000"
+      style="border: 1px solid #000000"
+    ></canvas>
+    <br />
+    <br />
+    <div id="input-content">
+      <input
+        type="text"
+        id="input-box"
+        placeholder="Enter your quote"
+        maxlength="150"
+      />
+      <div id="char-count">0/150</div>
+    </div>
+
+    <div id="button-function">
+      <button type="button" id="download">Download</button>
+      <button type="button" id="clear">Clear</button>
+    </div>
+
+    <div id="imageContainer"></div>
+    <!-- Link to the main JavaScript file -->
+    <script src="main.js"></script>
+  </body>
+</html>

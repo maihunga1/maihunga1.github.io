@@ -1,0 +1,108 @@
+body {
+  font-family: "Gluten", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+}
+
+#myCanvas {
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  background-color: rgb(254, 254, 254);
+  width: 90%;
+  height: auto;
+}
+
+#download {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#download:hover {
+  background-color: #0056b3;
+}
+
+#clear {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#clear:hover {
+  background-color: #0056b3;
+}
+
+#button-function {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#input-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#input-box {
+  padding: 10px;
+  font-size: 16px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#char-count {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (min-width: 768px) {
+  #myCanvas,
+  .img {
+    width: 70%;
+  }
+
+  #input-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #input-box {
+    width: 300px;
+    margin-bottom: 0;
+  }
+
+  #char-count {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #myCanvas,
+  .img {
+    width: 50%;
+  }
+
+  #input-box {
+    width: 300px;
+  }
+}
