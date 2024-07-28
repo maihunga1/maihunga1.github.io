@@ -16,10 +16,8 @@ window.onload = function () {
 
   // Draw the image onto the canvas once it's loaded
   img.onload = function () {
-    const ratio = canvas.width / img.width;
-
-    imgWidth = img.width * ratio;
-    imgHeight = img.height * ratio;
+    imgWidth = img.width;
+    imgHeight = img.height;
     drawCanvas(); // Initial draw
   };
 
@@ -44,12 +42,12 @@ window.onload = function () {
       text = convertSentence(text);
 
       // Set font properties
-      ctx.font = "60px Gluten";
+      ctx.font = "30px Gluten";
       ctx.fillStyle = "hotpink";
       ctx.strokeStyle = "purple";
 
       // Draw the text on the canvas with word wrapping
-      wrapText(ctx, text, 50, 100, canvas.width - 100, 50);
+      wrapText(ctx, text, 30, 50, canvas.width - 50, 50);
     }
   }
 
