@@ -30,26 +30,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="instruction">
-      <h1>Hướng dẫn</h1>
-      <ol>
-        <li>Nhập những gì bạn muốn chuyển đổi vào ô trống</li>
-        <li>Nhấn vào "Tạo ảnh" để tạo hình ảnh</li>
-        <li>Bấm giữ ảnh để copy ảnh hoặc tải ảnh về máy</li>
-        <li>Nhấn vào "Tạo lại" để tạo hình ảnh mới</li>
-      </ol>
-    </div>
-    <canvas
-      id="myCanvas"
-      width="400"
-      height="500"
-      style="border: 1px solid #000000"
-    ></canvas>
+    <canvas id="myCanvas" width="400" height="500"></canvas>
+    <img id="exported-img" src="image_url" style="display: none" />
+    <!-- </div> -->
     <br />
     <br />
     <div id="input-content">
       <textarea id="input-box" name="story" rows="5" cols="33"></textarea>
       <div id="char-count">0/150</div>
+    </div>
+
+    <div id="instruction" style="display: none">
+      <p>Giữ hình ảnh (điện thoại) hoặc chuột phải (máy tính) để tải xuống</p>
     </div>
 
     <div id="button-function">

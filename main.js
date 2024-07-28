@@ -55,9 +55,9 @@ window.onload = function () {
   document.getElementById("download").addEventListener("click", function () {
     // var imageContainer = document.getElementById("myCanvas");
     // Create a new image element
-    var img = document.createElement("img");
+    var img = document.getElementById("exported-img");
 
-    img.classList.add("exported-img");
+    // img.classList.add("exported-img");
 
     // Set the image source
     const src = canvas.toDataURL("image/png");
@@ -66,10 +66,10 @@ window.onload = function () {
 
     // // Append the image to the container
     img.onload = () => {
-      document.body.appendChild(img);
+      img.style.display = "";
+      document.getElementById("myCanvas").style.display = "none";
+      document.getElementById("instruction").style.display = "";
     };
-
-    document.getElementById("myCanvas").style.display = "none";
   });
 
   const inputBox = document.getElementById("input-box");
@@ -195,10 +195,8 @@ window.onload = function () {
     charCount.textContent = "0/150";
     drawCanvas();
     document.getElementById("myCanvas").style.display = "";
-    const exportedImgs = document.getElementsByClassName("exported-img");
-    for (let i = 0; i < exportedImgs.length; i++) {
-      exportedImgs[i].style.display = "none";
-    }
+    document.getElementById("exported-img").style.display = "none";
+    document.getElementById("instruction").style.display = "none";
   }
 
   document.getElementById("clear").addEventListener("click", clearText);
