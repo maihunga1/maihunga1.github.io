@@ -9,7 +9,7 @@ window.onload = function () {
 
   // Set the source of the image
   img.src =
-    "https://raw.githubusercontent.com/khoituan-desygner/nhnhnh/master/nhnhnh.jpg";
+    "https://raw.githubusercontent.com/maihunga1/maihunga1.github.io/master/nhnhnh.jpg";
 
   // Variables to store image dimensions
   let imgWidth, imgHeight;
@@ -51,45 +51,25 @@ window.onload = function () {
     }
   }
 
-  // Function to export the canvas as an image
-  function exportCanvas() {
-    // Ensure the canvas is fully drawn before exporting
-    drawCanvas();
-
-    // Get the data URL for the image
-    const dataURL = canvas.toDataURL("image/png");
-
-    // Create a link element
-    const link = document.createElement("a");
-    link.href = dataURL;
-    link.download = "canvas-image.png"; // Set the default file name
-
-    // Trigger the download by simulating a click
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
   // Add event listener to the button to export the canvas as an image
   document.getElementById("download").addEventListener("click", function () {
     // var imageContainer = document.getElementById("myCanvas");
     // Create a new image element
     var img = document.createElement("img");
 
+    img.classList.add("exported-img");
+
     // Set the image source
     const src = canvas.toDataURL("image/png");
 
     img.src = src;
 
-    // // Optionally set other attributes like width and height
-    // img.width = canvas.width;
-    // img.height = canvas.height;
-
     // // Append the image to the container
-    // imageContainer.appendChild(img);
     img.onload = () => {
       document.body.appendChild(img);
     };
+
+    document.getElementById("myCanvas").style.display = "none";
   });
 
   const inputBox = document.getElementById("input-box");
@@ -117,7 +97,7 @@ window.onload = function () {
           charCount.textContent = `${textLength}/150`;
 
           if (textLength >= 150) {
-            window.alert("Exceed maximum length!");
+            window.alert("viết lằm viết lốn?!");
           }
 
           drawCanvas(); // Redraw canvas on input change
@@ -128,29 +108,43 @@ window.onload = function () {
       console.error("Font loading failed:", e);
     });
 
-  // Function to wrap text
   function wrapText(context, text, x, y, maxWidth, lineHeight) {
     const words = text.split(" ");
     let line = "";
-    let testLine;
-    let testWidth;
     let currentY = y;
 
     for (let i = 0; i < words.length; i++) {
-      testLine = line + words[i] + " ";
-      testWidth = context.measureText(testLine).width;
-      if (testWidth > maxWidth && i > 0) {
-        if (currentY + lineHeight > canvas.height) {
-          return; // Text exceeds canvas height
+      let testLine = line + words[i] + " ";
+      let testWidth = context.measureText(testLine).width;
+
+      if (testWidth > maxWidth) {
+        if (context.measureText(words[i]).width > maxWidth) {
+          let wordWidth = 0;
+          for (let j = 0; j < words[i].length; j++) {
+            const charWidth = context.measureText(words[i][j]).width;
+            if (wordWidth + charWidth > maxWidth) {
+              context.fillText(line, x, currentY);
+              context.strokeText(line, x, currentY);
+              line = words[i][j];
+              wordWidth = charWidth;
+              currentY += lineHeight;
+            } else {
+              line += words[i][j];
+              wordWidth += charWidth;
+            }
+          }
+        } else {
+          context.fillText(line, x, currentY);
+          context.strokeText(line, x, currentY);
+          line = words[i] + " ";
+          currentY += lineHeight;
         }
-        context.fillText(line, x, currentY);
-        context.strokeText(line, x, currentY);
-        line = words[i] + " ";
-        currentY += lineHeight;
       } else {
         line = testLine;
       }
     }
+
+    // Draw the last line
     context.fillText(line, x, currentY);
     context.strokeText(line, x, currentY);
   }
@@ -200,6 +194,11 @@ window.onload = function () {
     inputBox.value = "";
     charCount.textContent = "0/150";
     drawCanvas();
+    document.getElementById("myCanvas").style.display = "";
+    const exportedImgs = document.getElementsByClassName("exported-img");
+    for (let i = 0; i < exportedImgs.length; i++) {
+      exportedImgs[i].style.display = "none";
+    }
   }
 
   document.getElementById("clear").addEventListener("click", clearText);
