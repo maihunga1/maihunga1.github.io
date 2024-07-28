@@ -34,31 +34,27 @@
       <h1>Hướng dẫn</h1>
       <ol>
         <li>Nhập những gì bạn muốn chuyển đổi vào ô trống</li>
-        <li>Nhấn vào "Export Image" để tạo hình ảnh</li>
+        <li>Nhấn vào "Tạo ảnh" để tạo hình ảnh</li>
         <li>Bấm giữ ảnh để copy ảnh hoặc tải ảnh về máy</li>
+        <li>Nhấn vào "Tạo lại" để tạo hình ảnh mới</li>
       </ol>
     </div>
     <canvas
       id="myCanvas"
-      width="800"
-      height="1000"
+      width="400"
+      height="500"
       style="border: 1px solid #000000"
     ></canvas>
     <br />
     <br />
     <div id="input-content">
-      <input
-        type="text"
-        id="input-box"
-        placeholder="Enter your quote"
-        maxlength="150"
-      />
+      <textarea id="input-box" name="story" rows="5" cols="33"></textarea>
       <div id="char-count">0/150</div>
     </div>
 
     <div id="button-function">
-      <button type="button" id="download">Export image</button>
-      <button type="button" id="clear">Clear</button>
+      <button type="button" id="download">Tạo ảnh</button>
+      <button type="button" id="clear">Tạo lại</button>
     </div>
 
     <div id="imageContainer"></div>

@@ -16,8 +16,10 @@ window.onload = function () {
 
   // Draw the image onto the canvas once it's loaded
   img.onload = function () {
-    imgWidth = img.width;
-    imgHeight = img.height;
+    const ratio = canvas.width / img.width;
+
+    imgWidth = img.width * ratio;
+    imgHeight = img.height * ratio;
     drawCanvas(); // Initial draw
   };
 
@@ -97,7 +99,7 @@ window.onload = function () {
           charCount.textContent = `${textLength}/150`;
 
           if (textLength >= 150) {
-            window.alert("viết lằm viết lốn?!");
+            window.alert("Viết ít ít thôi!!");
           }
 
           drawCanvas(); // Redraw canvas on input change
