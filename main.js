@@ -53,7 +53,6 @@ window.onload = function () {
 
   // Add event listener to the button to export the canvas as an image
   document.getElementById("download").addEventListener("click", function () {
-    // var imageContainer = document.getElementById("myCanvas");
     // Create a new image element
     var img = document.getElementById("exported-img");
 
