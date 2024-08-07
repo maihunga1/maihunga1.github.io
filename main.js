@@ -11,7 +11,7 @@ img1.src =
 const img2 = new Image();
 img2.crossOrigin = "anonymous";
 img2.src =
-  "https://github.com/maihunga1/maihunga1.github.io/blob/main/phongcach.png?raw=true";
+  "https://raw.githubusercontent.com/maihunga1/maihunga1.github.io/master/phongcach.png";
 
 let selectedImage = img1;
 
