@@ -32,12 +32,16 @@
   <body>
     <canvas id="myCanvas" width="400" height="500"></canvas>
     <img id="exported-img" src="image_url" style="display: none" />
-    <!-- </div> -->
-    <br />
-    <br />
     <div id="input-content">
       <textarea id="input-box" name="story" rows="5" cols="33"></textarea>
       <div id="char-count">0/150</div>
+    </div>
+
+    <div id="image-select">
+      <input type="radio" id="image1" name="image" checked />
+      <label for="image1">Nguyên bản</label>
+      <input type="radio" id="image2" name="image" />
+      <label for="image2">Phong cách</label>
     </div>
 
     <div id="instruction" style="display: none">

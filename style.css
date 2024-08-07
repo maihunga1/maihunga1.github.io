@@ -23,6 +23,17 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+#image-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+#image-select label {
+  margin: 0 10px; /* Adjust the spacing between labels as needed */
+}
+
 #myCanvas {
   margin-bottom: 10px;
   background-color: rgb(254, 254, 254);
