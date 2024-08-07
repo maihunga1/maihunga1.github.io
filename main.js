@@ -32,11 +32,11 @@ document.querySelectorAll('input[name="image"]').forEach((radio) => {
 
 // Handle error
 img1.onerror = function (err) {
-  window.alert("Failed to load image.", err);
+  window.alert("Failed to load image 1.", err);
 };
 
 img2.onerror = function (err) {
-  window.alert("Failed to load image.", err);
+  window.alert("Failed to load image 2.", err);
 };
 
 // Function to draw the entire canvas
